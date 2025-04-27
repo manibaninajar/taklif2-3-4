@@ -1,13 +1,16 @@
 import random
 
 print("Welcome to the Flower or Empty game!")
-print("Pick a number between 1 and 2.")
+print("Pick left or right.")
 
-flower = random.randint(1, 2)
+flower = random.choice(["left", "right"])
 
-choice = int(input("Enter your number: "))
+choice = input("Enter 'left' or 'right': ").lower()
 
-if choice == flower:
-    print("Congratulations! You found the flower.")
+if choice == "left" or choice == "right":
+    if choice == flower:
+        print("Congratulations! You found the flower.")
+    else:
+        print("Empty! The flower was in the", flower)
 else:
-    print("Empty! The flower was at number", flower)
+    print("Invalid input! You must enter 'left' or 'right'.")
