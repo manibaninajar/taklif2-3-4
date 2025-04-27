@@ -1,0 +1,22 @@
+# Get a number from the user
+num = int(input("Please enter a number: "))
+
+# If the number is less than or equal to 1, it is not prime
+if num <= 1:
+    print("Not a prime number.")
+else:
+    # Assume the number is prime
+    is_prime = True
+
+    # Check from 2 up to one less than the number
+    for i in range(2, num):
+        if num % i == 0:
+            # If it divides exactly, it's not prime
+            is_prime = False
+            break
+
+    # After checking all numbers
+    if is_prime:
+        print("It is a prime number.")
+    else:
+        print("Not a prime number.")
